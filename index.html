@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy New Year ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Countdown -->
+<div id="countdown">
+    <h1>✨ Counting moments till our New Year ✨</h1>
+    <div id="timer"></div>
+</div>
+
+<!-- Questions container -->
+<div id="questions">
+    <div id="q1" class="question hidden">
+        <h1>💫 Question 1</h1>
+        <p>Are you excited to step into 2026 with me? 💖</p>
+        <button onclick="answer(1,'yes')">YES 😍</button>
+        <button onclick="answer(1,'no')">NO 🙈</button>
+    </div>
+
+    <div id="q2" class="question hidden">
+        <h1>💫 Question 2</h1>
+        <p>Do you believe this year will bring us closer? 🌙</p>
+        <button onclick="answer(2,'yes')">YES 💕</button>
+        <button onclick="answer(2,'no')">NO 🤍</button>
+    </div>
+
+    <div id="q3" class="question hidden">
+        <h1>💫 Question 3</h1>
+        <p>Will you stay with me even on hard days? 🫶</p>
+        <button onclick="answer(3,'yes')">YES 🥹</button>
+        <button onclick="answer(3,'no')">NO 😶</button>
+    </div>
+
+    <div id="q4" class="question hidden">
+        <h1>💫 Question 4</h1>
+        <p>Can I still be your safe place? 🤍</p>
+        <button onclick="answer(4,'yes')">YES 😌</button>
+        <button onclick="answer(4,'no')">NO 😔</button>
+    </div>
+
+    <div id="q5" class="question hidden">
+        <h1>💫 Final Question</h1>
+        <p>Will you walk into every New Year holding my hand? ❤️</p>
+        <button onclick="showMessage()">YES 🥰</button>
+        <button onclick="answer(5,'no')">NO 🤍</button>
+    </div>
+</div>
+
+<!-- Reaction (GIF + message) -->
+<div id="reaction" class="hidden">
+    <p id="reactionText"></p>
+    <img id="reactionGif" src="" alt="reaction gif">
+</div>
+
+<!-- Final message -->
+<div id="message" class="hidden">
+    <h1>Happy New Year, My Love ❤️</h1>
+    <p>
+        Another year begins, and I still choose you.
+        Through every song you sing, every smile you give,
+        every dream you chase — I’ll be right here.
+        <br><br>
+        💫 2026 is ours 💫
+    </p>
+    <button onclick="showSurprise()">Click for a Surprise 💌</button>
+</div>
+
+<!-- Surprise -->
+<!-- Surprise Video -->
+<div id="surprise" class="hidden">
+    <video id="surpriseVideo" controls autoplay>
+        <source src="images/video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

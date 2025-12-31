@@ -1,0 +1,196 @@
+/* Reset & layout */
+body {
+    margin: 0;
+    height: 100vh;
+    position: relative;
+
+    /* Background slideshow */
+    background-image: url("images/us1.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: slideshow 20s infinite;
+
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    overflow: hidden;
+}
+
+/* Blurred background fill (removes black sides) */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+
+    /* You can enable blur if you like */
+    /* filter: blur(18px); */
+    transform: scale(0.5);
+
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* Soft dark overlay for readability (NO BLUR) */
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Slideshow animation */
+@keyframes slideshow {
+    0% {
+        background-image: url("images/us1.jpeg");
+    }
+    33% {
+        background-image: url("images/us2.jpeg");
+    }
+    66% {
+        background-image: url("images/us3.jpeg");
+    }
+    100% {
+        background-image: url("images/us1.jpeg");
+    }
+}
+
+/* Hide elements */
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+#questions {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question {
+    position: absolute;
+    max-width: 700px;
+    text-align: center;
+}
+
+/* Text styles */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.3rem;
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+/* Buttons */
+button {
+    margin-top: 20px;
+    padding: 12px 28px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #ff4b5c;
+    color: white;
+
+    font-size: 1rem;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+button:hover {
+    background: #ff2e44;
+    transform: scale(0.5);
+}
+
+/* Countdown timer */
+#timer {
+    font-size: 2rem;
+    margin-top: 15px;
+}
+
+#reaction {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+#reaction img {
+    max-width: 320px;
+    width: 80%;
+    margin-top: 20px;
+
+    display: block;
+}
+
+#message {
+    font-size: 2rem;
+    margin-top: 15px;
+
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    z-index: 5;
+}
+
+
+
+#countdown {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    z-index: 5;
+}
+
+
+#surprise {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#surprise video {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+}
